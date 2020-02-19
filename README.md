@@ -36,4 +36,4 @@ After your Active Record models have been properly defined, you can load the
 seed data by running `rake db:seed`.
 
 #### Views and Controllers
-
+![Final Demo](https://i.imgur.com/O1ayQkw.gif)
