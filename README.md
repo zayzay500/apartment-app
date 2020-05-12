@@ -35,5 +35,36 @@ Write migrations to create the following tables:
 After your Active Record models have been properly defined, you can load the
 seed data by running `rake db:seed`.
 
-#### Views and Controllers
+#### Deliverables
+> It may be helpful to write a list of the routes and views you'll need before you begin.
+
+A user should be able to:
+
+* Edit a tennant
+    * Change the name of the tennant
+    * Change the apartment the tennant lives in
+* See the details of a specific apartment
+    * See the apartment's address
+    * See a list of the tennants living in the apartment
+    * NOTE: You will need an ID in the path for this page!
+* See a list of all tennants
+    * Click on a tennant to go to the tennants edit page
+* See a list of all apartments
+    * Click on a apartment to go to the apartment details page
+* Create a new apartment
+    * With it's address
+    * After creating the apartment, send the user to see the list of all apartments
+* Create a new tennant
+    * With their name
+    * After creating the tennant, send the user to see the list of all tennants
+* Delete an apartment
+    * Then send the user to see the list of all apartments
+* Delete a tennant
+    * Then send the user to see the list of all tennants
+* Navigate your application using links instead of typing in the URL bar
+
+#### Demo:
+
+* There might be some extra features in demo:
+
 ![Final Demo](https://i.imgur.com/O1ayQkw.gif)
