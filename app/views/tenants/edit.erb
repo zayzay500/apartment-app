@@ -1,1 +1,23 @@
+<form action="/tenants/<%=@tenant.id%>" method='post'>
+<input type="hidden" name="_method" value="patch"/>
 
+<label>Name:</label>
+<input type="text" name="tenant[name]" value="<%=@tenant.name%>"/><br/>
+
+<label>Apartment address:</label>
+<select name="tenant[apartment_id]">
+<% @apartments.each do |apartment| %>
+    <% if apartment == @tenant.apartment %>
+    <option value=<%=apartment.id%> selected> <%=apartment.address%> </option>
+    <% else %>
+    <option value=<%=apartment.id%> > <%=apartment.address%> </option>
+    <% end %>
+<% end %>
+</select>
+
+<label>New apartment address:</label>
+<input type="text" name="apartment[address]"/>
+
+<input type="submit"/>
+
+</form>

@@ -1,0 +1,31 @@
+<p> Single Apartment information </p>
+<label>Address:</label>
+<h4> <%= @apartment.address %> </h4>
+<label>Tenants:</label>
+<% @apartment.tenants.each do |tenant| %>
+    <li>
+        <a href="/tenants/<%= tenant.id %>">
+          <%= tenant.name %>
+        </a>
+      
+    </li>
+<% end %>
+
+<button>
+    <a href="/apartments/<%= @apartment.id %>/edit">
+        Edit
+    </a>
+</button>
+
+<button>
+    <a href="/apartments">
+        Back
+    </a>
+</button>
+
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+<input type="submit" value="Delete Apartment"/>
+</form>

@@ -1,0 +1,18 @@
+<form action="/tenats" method='post'>
+
+<label>Name:</label>
+<input type="text" name="tenat[name]"/><br/>
+
+<label>Apartment address:</label>
+<select name="tenat[apartment_id]">
+<% @apartments.each do |apartment| %>
+    <option value=<%=apartment.id%> > <%=apartment.address%> </option>
+<% end %>
+</select>
+
+<label>New apartment address:</label>
+<input type="text" name="apartment[address]"/>
+
+<input type="submit"/>
+
+</form>
