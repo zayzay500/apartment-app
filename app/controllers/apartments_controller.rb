@@ -11,20 +11,24 @@ class ApartmentsController < ApplicationController
     erb :new
   end
   
-  get 'apartments/:id' do
+  get '/apartments/:id' do
+    # binding.pry
+    @apartment = get_apartment
+    @tenants = @apartment.tenants
     erb :show
   end
   
-  post 'apartments/' do
-  
+  post '/apartments' do
+    aparment = Apartment.create(params)
+
+    redirect "/apartments/#{aparment.id}"
   end
   
-  patch 'apartments/:id' do
-  
-  end
-  
-  delete 'apartments/:id' do
-  
+  delete '/apartments/:id' do
+    apartment = get_apartment
+    apartment.delete
+
+    redirect "/apartments"
   end
   
   def get_apartment
