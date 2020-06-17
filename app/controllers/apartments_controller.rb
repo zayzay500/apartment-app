@@ -1,15 +1,18 @@
 class ApartmentsController < ApplicationController
+
+  set :views, "app/views/apartments"
   # add controller methods
   get '/apartments' do
-  
+    @apartments = Apartment.all
+    erb :index
   end
   
   get '/apartments/new' do
-  
+    erb :new
   end
   
   get 'apartments/:id' do
-  
+    erb :show
   end
   
   post 'apartments/' do
